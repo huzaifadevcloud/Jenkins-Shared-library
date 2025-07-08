@@ -6,7 +6,7 @@ def call(Map config = [:]) {
     echo "Pushing Docker image: ${imageName}:${imageTag}"
     
     withCredentials([usernamePassword(
-        credentialsId: DOCKER_CREDENTIALS_ID,
+        credentialsId: credentials,
         usernameVariable: 'DOCKER_USER',
         passwordVariable: 'DOCKER_PASS'
     )]) {
