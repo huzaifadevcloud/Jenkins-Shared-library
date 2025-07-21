@@ -1,5 +1,5 @@
-def call(String fullImage) {
-    echo "Starting deployment using image: ${fullImage}"
+def call(String imageName, String imageTag) {
+    echo "Starting deployment using image: ${imageName}:${imageTag}"
 
     // Run container and expose port 81015
     sh """
