@@ -5,7 +5,7 @@ def call(Map config = [:]) {
     echo "Starting deployment using image: ${imageName}:${imageTag}"
 
     sh """
-        docker run --rm -p 8105:8105 ${imageName}:${imageTag}
+        docker run --rm -p 8105:8000 ${imageName}:${imageTag}
     """
 
     // Optional: Test route and stop container manually if needed
