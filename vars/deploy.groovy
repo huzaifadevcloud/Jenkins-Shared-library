@@ -1,7 +1,9 @@
-def call(String imageName, String imageTag) {
+def call(Map config = [:]) {
+    def imageName = config.imageName ?: error("Missing imageName")
+    def imageTag  = config.imageTag ?: 'latest'
+
     echo "Starting deployment using image: ${imageName}:${imageTag}"
 
-    // Run container and expose port 81015
     sh """
         docker run --rm -p 8105:8105 ${imageName}:${imageTag}
     """
