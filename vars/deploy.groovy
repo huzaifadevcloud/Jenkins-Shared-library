@@ -3,7 +3,7 @@ def call(String imageName, String imageTag) {
 
     // Run container and expose port 81015
     sh """
-        docker run --rm -p 8105:8105 ${fullImage}
+        docker run --rm -p 8105:8105 $${imageName}:${imageTag}
     """
 
     // Optional: Test route and stop container manually if needed
